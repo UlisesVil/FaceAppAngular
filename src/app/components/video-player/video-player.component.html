@@ -1,0 +1,31 @@
+<div *ngIf="modelsReady">
+  <!--#videoElement es un alias para usar el ViewChild-->
+  <video #videoElement
+         [style.width]="width+'px'"
+         [style.height]="height+'px'"
+         (loadedmetadata)="loadedMetaData()"
+         (play)="listenerPlay()"
+         *ngIf="stream"
+         [srcObject]="stream">
+
+
+  </video>
+</div>
+
+<div *ngIf="!modelsReady">
+  Cargando Modelos......
+</div>
+
+
+
+<!--FILTERS-->
+
+<div class="filters" *ngFor="let filter of filters" >
+  <div class="filter-eye filter-question" *ngIf="filter.type=== 'question'">
+    <span [innerHTML]="filter.question"></span>
+  </div>
+
+  <div class="filter-eye filter-image" *ngIf="filter.type === 'image'" >
+    <img src="assets/images/{{filter.image}}" alt="">
+  </div>
+</div>

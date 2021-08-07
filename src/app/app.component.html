@@ -1,0 +1,61 @@
+<div class="wrapper">
+
+  <div class="header">
+    <div class="in-header">
+      <i class="uil uil-video"></i>
+    </div>
+
+    <div class="title">
+      <b>Angular App</b> - Facial Recognition
+    </div>
+
+    <div>
+      <a href="https://github.com/UlisesVil" target="_blank">
+        <i class="uil uil-github"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="block-main">
+    <div class="cam">
+      <app-video-player
+        [width]="dimensionVideo.width"
+        [height]="dimensionVideo.height"
+        [stream]="currentStream"></app-video-player>
+    </div>
+
+    <div class="sidebar">
+      <div class="zone-body">
+        <div class="block">
+          <div><b>Estado de Animo</b></div>
+          <div class="block-expressions">
+            <div *ngFor="let expression of listExpressions">
+              <span>{{expression.name}}: </span><span class="value-number">{{expression.value | number}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <div>Puntos de referencia</div>
+          <div class="canvas-preview"></div>
+        </div>
+      </div>
+
+      <div class="zone-btn">
+        <ul class="list-btn">
+          <li *ngFor="let btn of [1, 1, 1] ">
+            <i class="uil uil-smile-dizzy"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+<router-outlet></router-outlet>
