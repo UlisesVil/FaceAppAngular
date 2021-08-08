@@ -10,6 +10,7 @@ import * as _ from 'lodash';
 
 })
 export class AppComponent implements OnInit, OnDestroy {
+
   public currentStream: any;
   public dimensionVideo: any;
   listEvents: Array<any> = [];
